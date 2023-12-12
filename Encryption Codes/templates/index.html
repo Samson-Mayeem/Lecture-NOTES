@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload and Download</title>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+
+    {% if download_link %}
+        <hr>
+        <h2>Download Section</h2>
+        <p>Encrypted File: <a href="{{ download_link. }}" download>Download Encrypted File</a></p>
+    {% endif %}
+
+    <hr>
+    <h2>All Encrypted Files</h2>
+    {% for link in download_links %}
+        <p>Encrypted File: <a href="{{ link }}" download>Download Encrypted File</a></p>
+    {% endfor %}
+</body>
+
+</html>

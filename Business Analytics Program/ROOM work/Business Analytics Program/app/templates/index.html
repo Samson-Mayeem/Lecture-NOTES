@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analysis Report</title>
+</head>
+<body>
+    <h1>Sentiment Analysis Report</h1>
+    <p>Total Reviews: {{ report['Total Reviews'] }}</p>
+    <p>Positive Sentiment (%): {{ report['Positive Sentiment (%)'] }}</p>
+    <p>Negative Sentiment (%): {{ report['Negative Sentiment (%)'] }}</p>
+    <p>Neutral Sentiment (%): {{ report['Neutral Sentiment (%)'] }}</p>
+
+    <h2>Common Themes</h2>
+    <ul>
+        {% for theme in report['Common Themes'] %}
+            <li>{{ theme }}</li>
+        {% endfor %}
+    </ul>
+    <h1>Header Names</h1>
+    <ul>
+        {% for header in header_names %}
+            <li>{{ header }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
